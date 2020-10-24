@@ -10,7 +10,8 @@ const GlobalStyle = createGlobalStyle`
 
 const theme = {
   colors: {
-    primary: "#1d1f21",
+    primary: "tomato",
+    secondary: "papayawhip",
   },
 };
 
