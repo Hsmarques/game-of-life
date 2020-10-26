@@ -72,7 +72,6 @@ export const Board = ({ hasGameStarted }) => {
         }
       })
     );
-    console.log(newCells);
     setBoard(newBoard);
     setCells(newCells);
   };
