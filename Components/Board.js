@@ -1,7 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styled from "styled-components";
 import { useInterval } from "../custom-hooks/useInterval";
-import { CellBlock, CellAlive } from "./Cell";
+import { CellAlive } from "./Cell";
 
 const directions = [
   [-1, -1],
@@ -129,26 +129,11 @@ export const Board = ({ hasGameStarted }) => {
     return neighbours;
   };
 
-  const setCellAlive = (x, y) => {
-    let newCells = [...cells, { x, y }];
-    setCells(newCells);
-  };
-
   useInterval(() => {
     if (hasGameStarted) {
       runTick();
     }
   }, 200);
-
-  // useEffect(() => {
-  //   if (hasGameStarted) {
-  //     let id = setTimeout(() => runTick(), 1000);
-  //     return () => {
-  //       console.log("clearing interval");
-  //       return clearTimeout(id);
-  //     };
-  //   }
-  // }, [hasGameStarted]);
 
   return (
     <>
